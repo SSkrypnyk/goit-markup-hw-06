@@ -244,8 +244,13 @@ color: var(--white-text-color);
 .modal-close {
     width: 11px;
     height: 11px;
+    fill: var(--logo-text-color);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
+.modal-btn:hover .modal-close,
+.modal-btn:focus .modal-close {
+    fill: var(--accent-color);
+}
 /* modal form */
 
 .modal-tittle {
@@ -258,18 +263,159 @@ color: var(--white-text-color);
     color: #212121;
 
     display: block;
+    margin-bottom: 12px;
 }
 textarea {
     resize: none;
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
     width: 448px;
+    padding: 12px 16px;
 }
 .form-group,
 .form-comment,
 .form-policy {
     display: block;
     margin-bottom: 10px;
+}
+.form-comment {
+    margin-bottom: 20px;
+}
+.form-group {
+    width: 448px;
+    height: 58px;
+}
+.form-label {
+    display: block;
+    font-size: 12px;
+    line-height: 1.16;
+    
+    letter-spacing: 0.01em;
+    
+    color: #757575;
+    margin-bottom: 4px;
+}
+.input-icon {
+    position: relative;
+    height: 40px;
+    fill: var(--logo-text-color);
+    transition: fill 5000ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.form-input {
+    display: block;
+    width: 100%;
+    height: 40px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    background-color: transparent;
+    outline: none;
+    padding-left: 42px;
+    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1) ;
+}
+.form-icon {
+    position: relative;
+    bottom: 18px;
+    left: 12px;
+    transform: translateY(-50%);
+    fill: var(--logo-text-color);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+.form-input:focus,
+.form-input:hover,
+.form-text:hover,
+.form-text:focus {
+    border-color: var(--accent-color);
+}
+.form-group:hover .form-icon,
+.form-group:focus .form-icon {
+    fill: var(--accent-color);
+}
+.form-text {
+    width: 100%;
+    height: 128px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    outline: none;
+    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-btn {
+    display: block;
+    width: 200px;
+    background: #188CE8;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    border: none;
+    padding: 10px 55px;
+
+
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.88;
+    
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.06em;
+    
+    color: #FFFFFF;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+/*  form-policy-group */
+.form-policy-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+
+}
+.policy-icon {
+    position: absolute;
+    left: 12px;
+
+    width: 16px;
+    height: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+
+    outline: 2px solid #2196F3;
+    outline-offset: -2px;
+    border-radius: 2px;
+    background-color: transparent;
+    transition: outline 250ms cubic-bezier(0.4, 0, 0.2, 1),
+                background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.policy-checked {
+    fill: var(--white-text-color);
+    opacity: 0;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+.checkbox:checked + .policy-icon {
+    background-color: var(--accent-color);
+}
+.checkbox:checked+.policy-icon .policy-checked {
+    opacity: 1;
+}
+.policy-text {
+    font-size: 14px;
+    line-height: 1.71;
+    letter-spacing: 0.03em;
+    
+    color: #757575;
+    margin-left: 35px;
+}
+.policy-accent-text {
+    font-size: 14px;
+    line-height: 1.71;
+
+    letter-spacing: 0.03em;
+    text-decoration-line: underline;
+    
+    color: var(--accent-color)
 }
 /*  features*/
 .features .features-list {
@@ -637,6 +783,7 @@ margin-right: 0;
     border: 1px solid rgba(255, 255, 255, 0.3);
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
     border-radius: 4px;
+    color: var(--white-text-color);
 }
 .mailing-btn {
     position: relative;
@@ -663,6 +810,9 @@ margin-right: 0;
     position: absolute;
     top: 13px;
     right: 28px;
+}
+.icon-send {
+    fill: #FFFFFF;
 }
 /* portfolio */
 .portfolio {
