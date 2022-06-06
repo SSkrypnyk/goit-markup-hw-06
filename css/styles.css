@@ -295,12 +295,6 @@ textarea {
     color: #757575;
     margin-bottom: 4px;
 }
-.input-icon {
-    position: relative;
-    height: 40px;
-    fill: var(--logo-text-color);
-    transition: fill 5000ms cubic-bezier(0.4, 0, 0.2, 1);
-}
 .form-input {
     display: block;
     width: 100%;
@@ -381,11 +375,10 @@ textarea {
     align-items: center;
     justify-content: left;
 
-    outline: 2px solid #2196F3;
-    outline-offset: -2px;
+    border: 2px solid #212121;
     border-radius: 2px;
     background-color: transparent;
-    transition: outline 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1),
                 background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .policy-checked {
@@ -396,6 +389,10 @@ textarea {
 }
 .checkbox:checked + .policy-icon {
     background-color: var(--accent-color);
+    border: 2px solid #2196F3;
+}
+.checkbox:focus +.policy-icon {
+    border-color: var(--accent-color);
 }
 .checkbox:checked+.policy-icon .policy-checked {
     opacity: 1;
@@ -796,6 +793,7 @@ margin-right: 0;
     
     display: flex;
     align-items: center;
+/*     justify-content: center; */
     text-align: center;
     letter-spacing: 0.06em;
     
@@ -807,6 +805,7 @@ margin-right: 0;
     border: none;
 }
 .mailing-icon {
+/*     margin-left: 10px */;
     position: absolute;
     top: 13px;
     right: 28px;
